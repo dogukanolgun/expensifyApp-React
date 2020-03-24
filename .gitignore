@@ -3,5 +3,5 @@ public/bundle.js
 public/bundle.js.map
 public/styles.css
 public/styles.css.map
-public/package-lock.json
-public/yarn-error.log
+package-lock.json
+yarn-error.log
