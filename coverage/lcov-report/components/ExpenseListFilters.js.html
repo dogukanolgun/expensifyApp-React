@@ -21,7 +21,7 @@
     <div class='clearfix'>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -114,24 +114,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -160,11 +160,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -188,25 +188,25 @@ export class ExpenseListFilters extends React.Component {
     state = {
         calendarFocused: null
     };
-    onDatesChange = ({ startDate, endDate }) =&gt; {
-        this.props.setStartDate(startDate);
-        this.props.setEndDate(endDate);
+    onDatesChange = <span class="fstat-no" title="function not covered" >({</span> startDate, endDate }) =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.props.setStartDate(startDate);</span>
+<span class="cstat-no" title="statement not covered" >        this.props.setEndDate(endDate);</span>
     };
-    onFocusChange = (calendarFocused) =&gt; {
-        this.setState(() =&gt; ({ calendarFocused }));
+    onFocusChange = <span class="fstat-no" title="function not covered" >(c</span>alendarFocused) =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.setState(<span class="fstat-no" title="function not covered" >()</span> =&gt; (<span class="cstat-no" title="statement not covered" >{ calendarFocused })</span>);</span>
     };
-    onTextChange = (e) =&gt; {
-        this.props.setTextFilter(e.target.value);
+    onTextChange = <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.props.setTextFilter(e.target.value);</span>
     };
-    onSortChange = (e) =&gt; {
-        if (e.target.value === 'date') {
-            this.props.sortByDate();
-        } else <span class="missing-if-branch" title="else path not taken" >E</span>if (e.target.value === 'amount') {
-            this.props.sortByAmount();
+    onSortChange = <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
+<span class="cstat-no" title="statement not covered" >        if (e.target.value === 'date') {</span>
+<span class="cstat-no" title="statement not covered" >            this.props.sortByDate();</span>
+        } else <span class="cstat-no" title="statement not covered" >if (e.target.value === 'amount') {</span>
+<span class="cstat-no" title="statement not covered" >            this.props.sortByAmount();</span>
         }
     };
-    render() {
-        return (
+<span class="fstat-no" title="function not covered" >    re</span>nder() {
+<span class="cstat-no" title="statement not covered" >        return (</span>
             &lt;div&gt;
                 &lt;input
                     type="text"
@@ -254,7 +254,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(ExpenseListFilters);
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Apr 21 2020 07:00:25 GMT+0300 (Doğu Avrupa Yaz Saati)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Apr 21 2020 08:43:27 GMT+0300 (Doğu Avrupa Yaz Saati)
 </div>
 </div>
 <script src="..\prettify.js"></script>
