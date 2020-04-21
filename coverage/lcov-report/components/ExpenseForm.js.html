@@ -132,9 +132,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -166,14 +166,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -182,7 +182,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -229,101 +229,101 @@ import { SingleDatePicker } from 'react-dates';
 // console.log(now.format('Do MMM YYYY'));
 &nbsp;
 export default class ExpenseForm extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 &nbsp;
-        this.state = {
-            description: props.expense ? props.expense.description : '',
-            note: props.expense ? props.expense.form : '',
-            amount: props.expense ? (props.expense.amount / 100).toString() : '',
-            createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
-            calendarFocused: false,
-            error: ''
-        };
+    this.state = {
+      description: props.expense ? props.expense.description : '',
+      note: props.expense ? props.expense.form : '',
+      amount: props.expense ? (props.expense.amount / 100).toString() : '',
+      createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
+      calendarFocused: false,
+      error: ''
+    };
+  }
+  onDescriptionChange = (e) =&gt; {
+    const description = e.target.value;
+    this.setState(() =&gt; ({ description }));
+  };
+  onNoteChange = (e) =&gt; {
+    const note = e.target.value;
+    this.setState(() =&gt; ({ note }));
+  };
+  onAmoutChange = (e) =&gt; {
+    const amount = e.target.value;
+    if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
+      this.setState(() =&gt; ({ amount }));
     }
-    onDescriptionChange = (e) =&gt; {
-        const description = e.target.value;
-        this.setState(() =&gt; ({ description }));
-    };
-    onNoteChange = (e) =&gt; {
-        const note = e.target.value;
-        this.setState(() =&gt; ({ note }));
-    };
-    onAmoutChange = (e) =&gt; {
-        const amount = e.target.value;
-        if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
-            this.setState(() =&gt; ({ amount }))
-        }
-    };
-    onDateChange = (createdAt) =&gt; {
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (createdAt) {
-            this.setState(() =&gt; ({ createdAt }));
-        }
-    };
-    onFocusChange = ({ focused }) =&gt; {
-        this.setState(() =&gt; ({ calendarFocused: focused }));
-    };
-    onSubmit = (e) =&gt; {
-        e.preventDefault(); // Don't refresh page
-        
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.state.description || <span class="branch-1 cbranch-no" title="branch not covered" >!this.state.amount)</span> {
-            // Error
-            this.setState(() =&gt; ({ error: 'Please provide description and amount' }));
-        } else {
-<span class="cstat-no" title="statement not covered" >            this.setState(<span class="fstat-no" title="function not covered" >()</span> =&gt; (<span class="cstat-no" title="statement not covered" >{ error: '' })</span>);</span>
-<span class="cstat-no" title="statement not covered" >            this.props.onSubmit({</span>
-                description: this.state.description,
-                amount: parseFloat(this.state.amount, 10) * 100,
-                createdAt: this.state.createdAt.valueOf(),
-                note: this.state.note
-            });
-        }
-    };
-    render () {
-        return (
-            &lt;div&gt;
-                {this.state.error &amp;&amp; &lt;p&gt;{this.state.error}&lt;/p&gt;}
-                &lt;form onSubmit={this.onSubmit}&gt;
-                    &lt;input
-                        type="text"
-                        placeholder="Description"
-                        autoFocus
-                        value={this.state.description}
-                        onChange={this.onDescriptionChange}
-                    /&gt;
-                    &lt;input
-                        type="text"
-                        placeholder="Amount"
-                        value={this.state.amount}
-                        onChange={this.onAmoutChange}
-                    /&gt;
-                    &lt;SingleDatePicker
-                        date={this.state.createdAt}
-                        onDateChange={this.onDateChange}
-                        focused={this.state.calendarFocused}
-                        onFocusChange={this.onFocusChange}
-                        numberOfMonths={1}
-                        isOutsideRange={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >false}</span>
-                        displayFormat="DD/MM/YYYY"
-                    /&gt;
-                    &lt;textarea
-                        placeholder="Add a note for your expense (optional)"
-                        value={this.state.note}
-                        onChange={this.onNoteChange}
-                    &gt;
-                    &lt;/textarea&gt;
-                    &lt;button&gt;Add Expense&lt;/button&gt;
-                &lt;/form&gt;
-            &lt;/div&gt;
-        )
+  };
+  onDateChange = (createdAt) =&gt; {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (createdAt) {
+      this.setState(() =&gt; ({ createdAt }));
     }
-}</pre></td></tr>
+  };
+  onFocusChange = ({ focused }) =&gt; {
+    this.setState(() =&gt; ({ calendarFocused: focused }));
+  };
+  onSubmit = (e) =&gt; {
+    e.preventDefault(); // Don't refresh page
+&nbsp;
+    if (!this.state.description || !this.state.amount) {
+      // Error
+      this.setState(() =&gt; ({ error: 'Please provide description and amount' }));
+    } else {
+      this.setState(() =&gt; ({ error: '' }));
+      this.props.onSubmit({
+        description: this.state.description,
+        amount: parseFloat(this.state.amount, 10) * 100,
+        createdAt: this.state.createdAt.valueOf(),
+        note: this.state.note
+      });
+    }
+  };
+  render() {
+    return (
+      &lt;div&gt;
+        {this.state.error &amp;&amp; &lt;p&gt;{this.state.error}&lt;/p&gt;}
+        &lt;form onSubmit={this.onSubmit}&gt;
+          &lt;input
+            type="text"
+            placeholder="Description"
+            autoFocus
+            value={this.state.description}
+            onChange={this.onDescriptionChange}
+          /&gt;
+          &lt;input
+            type="text"
+            placeholder="Amount"
+            value={this.state.amount}
+            onChange={this.onAmoutChange}
+          /&gt;
+          &lt;SingleDatePicker
+            date={this.state.createdAt}
+            onDateChange={this.onDateChange}
+            focused={this.state.calendarFocused}
+            onFocusChange={this.onFocusChange}
+            numberOfMonths={1}
+            isOutsideRange={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >false}</span>
+            displayFormat="DD/MM/YYYY"
+          /&gt;
+          &lt;textarea
+            placeholder="Add a note for your expense (optional)"
+            value={this.state.note}
+            onChange={this.onNoteChange}
+          &gt;&lt;/textarea&gt;
+          &lt;button&gt;Add Expense&lt;/button&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+&nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Apr 21 2020 06:06:24 GMT+0300 (Doğu Avrupa Yaz Saati)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Apr 21 2020 07:00:25 GMT+0300 (Doğu Avrupa Yaz Saati)
 </div>
 </div>
 <script src="..\prettify.js"></script>

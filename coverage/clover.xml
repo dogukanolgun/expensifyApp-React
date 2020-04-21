@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1587438384539" clover="3.2.0">
-  <project timestamp="1587438384539" name="All files">
-    <metrics statements="103" coveredstatements="89" conditionals="62" coveredconditionals="56" methods="64" coveredmethods="46" elements="229" coveredelements="191" complexity="0" loc="103" ncloc="103" packages="6" files="17" classes="17">
+<coverage generated="1587441626023" clover="3.2.0">
+  <project timestamp="1587441626023" name="All files">
+    <metrics statements="103" coveredstatements="91" conditionals="62" coveredconditionals="58" methods="64" coveredmethods="47" elements="229" coveredelements="196" complexity="0" loc="103" ncloc="103" packages="6" files="17" classes="17">
       <package name="actions">
         <metrics statements="9" coveredstatements="9" conditionals="7" coveredconditionals="6" methods="8" coveredmethods="8"/>
         <file name="expenses.js" path="C:\Users\Doğukan OLGUN\Desktop\MERN\expensify-app\src\actions\expenses.js">
           <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="5" methods="3" coveredmethods="3"/>
-          <line num="4" count="3" type="stmt"/>
-          <line num="11" count="2" type="stmt"/>
-          <line num="23" count="3" type="cond" truecount="0" falsecount="1"/>
-          <line num="29" count="3" type="stmt"/>
+          <line num="4" count="3" type="cond" truecount="1" falsecount="0"/>
+          <line num="9" count="2" type="stmt"/>
+          <line num="21" count="3" type="cond" truecount="0" falsecount="1"/>
+          <line num="27" count="3" type="stmt"/>
         </file>
         <file name="filters.js" path="C:\Users\Doğukan OLGUN\Desktop\MERN\expensify-app\src\actions\filters.js">
           <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="5" coveredmethods="5"/>
@@ -21,7 +21,7 @@
         </file>
       </package>
       <package name="components">
-        <metrics statements="64" coveredstatements="50" conditionals="26" coveredconditionals="22" methods="49" coveredmethods="31"/>
+        <metrics statements="64" coveredstatements="52" conditionals="26" coveredconditionals="24" methods="49" coveredmethods="32"/>
         <file name="AddExpensePage.js" path="C:\Users\Doğukan OLGUN\Desktop\MERN\expensify-app\src\components\AddExpensePage.js">
           <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
           <line num="8" count="1" type="stmt"/>
@@ -37,11 +37,11 @@
           <line num="12" count="1" type="stmt"/>
           <line num="13" count="1" type="stmt"/>
           <line num="16" count="3" type="stmt"/>
-          <line num="28" count="1" type="stmt"/>
-          <line num="30" count="0" type="stmt"/>
-          <line num="34" count="1" type="stmt"/>
-          <line num="35" count="0" type="stmt"/>
-          <line num="36" count="0" type="stmt"/>
+          <line num="25" count="1" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="31" count="1" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="33" count="0" type="stmt"/>
         </file>
         <file name="ExpenseDashboardPage.js" path="C:\Users\Doğukan OLGUN\Desktop\MERN\expensify-app\src\components\ExpenseDashboardPage.js">
           <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -49,9 +49,9 @@
           <line num="6" count="1" type="stmt"/>
         </file>
         <file name="ExpenseForm.js" path="C:\Users\Doğukan OLGUN\Desktop\MERN\expensify-app\src\components\ExpenseForm.js">
-          <metrics statements="19" coveredstatements="16" conditionals="20" coveredconditionals="17" methods="16" coveredmethods="14"/>
-          <line num="12" count="9" type="stmt"/>
-          <line num="14" count="9" type="stmt"/>
+          <metrics statements="19" coveredstatements="18" conditionals="20" coveredconditionals="19" methods="16" coveredmethods="15"/>
+          <line num="12" count="10" type="stmt"/>
+          <line num="14" count="10" type="stmt"/>
           <line num="24" count="1" type="stmt"/>
           <line num="25" count="1" type="stmt"/>
           <line num="28" count="1" type="stmt"/>
@@ -62,12 +62,12 @@
           <line num="38" count="1" type="cond" truecount="1" falsecount="1"/>
           <line num="39" count="1" type="stmt"/>
           <line num="43" count="1" type="stmt"/>
-          <line num="46" count="1" type="stmt"/>
-          <line num="48" count="1" type="cond" truecount="2" falsecount="2"/>
+          <line num="46" count="2" type="stmt"/>
+          <line num="48" count="2" type="cond" truecount="4" falsecount="0"/>
           <line num="50" count="1" type="stmt"/>
-          <line num="52" count="0" type="stmt"/>
-          <line num="53" count="0" type="stmt"/>
-          <line num="62" count="15" type="stmt"/>
+          <line num="52" count="1" type="stmt"/>
+          <line num="53" count="1" type="stmt"/>
+          <line num="62" count="17" type="stmt"/>
           <line num="85" count="0" type="stmt"/>
         </file>
         <file name="ExpenseList.js" path="C:\Users\Doğukan OLGUN\Desktop\MERN\expensify-app\src\components\ExpenseList.js">
@@ -100,8 +100,8 @@
         </file>
         <file name="ExpenseListItem.js" path="C:\Users\Doğukan OLGUN\Desktop\MERN\expensify-app\src\components\ExpenseListItem.js">
           <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="5" count="3" type="stmt"/>
-          <line num="6" count="1" type="stmt"/>
+          <line num="4" count="3" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
         </file>
         <file name="Header.js" path="C:\Users\Doğukan OLGUN\Desktop\MERN\expensify-app\src\components\Header.js">
           <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -121,39 +121,39 @@
           <line num="1" count="1" type="stmt"/>
           <line num="5" count="6" type="cond" truecount="4" falsecount="0"/>
           <line num="7" count="1" type="stmt"/>
-          <line num="13" count="6" type="stmt"/>
-          <line num="15" count="2" type="stmt"/>
-          <line num="16" count="6" type="cond" truecount="2" falsecount="0"/>
-          <line num="17" count="1" type="stmt"/>
-          <line num="22" count="5" type="stmt"/>
-          <line num="26" count="1" type="stmt"/>
+          <line num="9" count="6" type="stmt"/>
+          <line num="11" count="2" type="stmt"/>
+          <line num="12" count="6" type="cond" truecount="2" falsecount="0"/>
+          <line num="13" count="1" type="stmt"/>
+          <line num="18" count="5" type="stmt"/>
+          <line num="22" count="1" type="stmt"/>
         </file>
         <file name="filters.js" path="C:\Users\Doğukan OLGUN\Desktop\MERN\expensify-app\src\reducers\filters.js">
           <metrics statements="8" coveredstatements="8" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1"/>
-          <line num="3" count="1" type="stmt"/>
-          <line num="12" count="6" type="cond" truecount="6" falsecount="0"/>
-          <line num="14" count="1" type="stmt"/>
-          <line num="19" count="1" type="stmt"/>
-          <line num="24" count="1" type="stmt"/>
-          <line num="29" count="1" type="stmt"/>
-          <line num="34" count="1" type="stmt"/>
-          <line num="39" count="1" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="14" count="6" type="cond" truecount="6" falsecount="0"/>
+          <line num="16" count="1" type="stmt"/>
+          <line num="21" count="1" type="stmt"/>
+          <line num="26" count="1" type="stmt"/>
+          <line num="31" count="1" type="stmt"/>
+          <line num="36" count="1" type="stmt"/>
+          <line num="41" count="1" type="stmt"/>
         </file>
       </package>
       <package name="selectors">
         <metrics statements="10" coveredstatements="10" conditionals="15" coveredconditionals="14" methods="3" coveredmethods="3"/>
         <file name="expenses.js" path="C:\Users\Doğukan OLGUN\Desktop\MERN\expensify-app\src\selectors\expenses.js">
           <metrics statements="10" coveredstatements="10" conditionals="15" coveredconditionals="14" methods="3" coveredmethods="3"/>
-          <line num="5" count="5" type="stmt"/>
-          <line num="6" count="15" type="stmt"/>
-          <line num="7" count="15" type="cond" truecount="2" falsecount="0"/>
-          <line num="8" count="15" type="cond" truecount="2" falsecount="0"/>
-          <line num="9" count="15" type="stmt"/>
-          <line num="11" count="15" type="cond" truecount="3" falsecount="0"/>
-          <line num="13" count="11" type="cond" truecount="2" falsecount="0"/>
-          <line num="14" count="7" type="cond" truecount="2" falsecount="0"/>
-          <line num="15" count="4" type="cond" truecount="1" falsecount="1"/>
-          <line num="16" count="4" type="cond" truecount="2" falsecount="0"/>
+          <line num="6" count="5" type="stmt"/>
+          <line num="8" count="15" type="stmt"/>
+          <line num="9" count="15" type="cond" truecount="2" falsecount="0"/>
+          <line num="12" count="15" type="cond" truecount="2" falsecount="0"/>
+          <line num="15" count="15" type="stmt"/>
+          <line num="19" count="15" type="cond" truecount="3" falsecount="0"/>
+          <line num="22" count="11" type="cond" truecount="2" falsecount="0"/>
+          <line num="23" count="7" type="cond" truecount="2" falsecount="0"/>
+          <line num="24" count="4" type="cond" truecount="1" falsecount="1"/>
+          <line num="25" count="4" type="cond" truecount="2" falsecount="0"/>
         </file>
       </package>
       <package name="tests">
