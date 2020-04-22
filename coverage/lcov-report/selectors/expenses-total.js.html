@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for components/NotFoundPage.js</title>
+    <title>Code coverage report for selectors/expenses-total.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="..\prettify.css" />
     <link rel="stylesheet" href="..\base.css" />
@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\index.html">All files</a> / <a href="index.html">components</a> NotFoundPage.js
+      <a href="..\index.html">All files</a> / <a href="index.html">selectors</a> expenses-total.js
     </h1>
     <div class='clearfix'>
     </div>
@@ -28,32 +28,17 @@
 3
 4
 5
-6
-7
-8
-9
-10
-11</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+6</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import { Link } from 'react-router-dom';
-&nbsp;
-&nbsp;
-const NotFoundPage = () =&gt; (
-	&lt;div&gt;
-		404! - &lt;Link to="/"&gt;Go Home&lt;/Link&gt;
-	&lt;/div&gt;
-);
-&nbsp;
-export default NotFoundPage;</pre></td></tr>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default (expenses) =&gt; {
+  return expenses
+    .map((expense) =&gt; expense.amount)
+    .reduce((sum, value) =&gt; sum + value, 0);
+};
+&nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->

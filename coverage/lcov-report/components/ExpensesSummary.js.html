@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for selectors/expenses.js</title>
+    <title>Code coverage report for components/ExpensesSummary.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="..\prettify.css" />
     <link rel="stylesheet" href="..\base.css" />
@@ -16,12 +16,12 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\index.html">All files</a> / <a href="index.html">selectors</a> expenses.js
+      <a href="..\index.html">All files</a> / <a href="index.html">components</a> ExpensesSummary.js
     </h1>
     <div class='clearfix'>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -51,62 +51,65 @@
 26
 27
 28
-29</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+29
+30</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import moment from 'moment';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import { connect } from 'react-redux';
+import numeral from 'numeral';
+import selectExpenses from '../selectors/expenses';
+import selectExpensesTotal from '../selectors/expenses-total';
 &nbsp;
-// Get visible expenses
+export const ExpensesSummary = ({ expenseCount, expensesTotal }) =&gt; {
+  const expenseWord = expenseCount === 1 ? 'expense' : 'expenses';
+  const formattedExpenseTotal = numeral(expensesTotal / 100).format('$0,0.00');
 &nbsp;
-export default (expenses, { text, sortBy, startDate, endDate }) =&gt; {
-  return expenses
-    .filter((expense) =&gt; {
-      const createdAtMoment = moment(expense.createdAt);
-      const startDateMatch = startDate
-        ? startDate.isSameOrBefore(createdAtMoment, 'day')
-        : true;
-      const endDateMatch = endDate
-        ? endDate.isSameOrAfter(createdAtMoment, 'day')
-        : true;
-      const textMatch = expense.description
-        .toLowerCase()
-        .includes(text.toLowerCase());
-&nbsp;
-      return startDateMatch &amp;&amp; endDateMatch &amp;&amp; textMatch;
-    })
-    .sort((a, b) =&gt; {
-      if (sortBy === 'date') {
-        return a.createdAt &lt; b.createdAt ? 1 : -1;
-      } else <span class="missing-if-branch" title="else path not taken" >E</span>if (sortBy === 'amount') {
-        return a.amount &lt; b.amount ? 1 : -1;
-      }
-    });
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;
+        Viewing {expenseCount} {expenseWord} totaling {formattedExpenseTotal}
+      &lt;/h1&gt;
+    &lt;/div&gt;
+  );
 };
+&nbsp;
+const mapStateToProps = <span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; {
+  const visibleExpenses = <span class="cstat-no" title="statement not covered" >selectExpenses(state.expenses, state.filters);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return {</span>
+    expenseCount: visibleExpenses.length,
+    expensesTotal: selectExpensesTotal(visibleExpenses)
+  };
+};
+&nbsp;
+export default connect(mapStateToProps)(ExpensesSummary);
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
