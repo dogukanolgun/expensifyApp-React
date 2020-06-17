@@ -1,5 +1,5 @@
 # Expensify App
-Put your life in the hands of a computer
+used Airbnb's date picker
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/30694575/84903698-179eac80-b0b7-11ea-9faa-d5a2b4da7cba.PNG" 
